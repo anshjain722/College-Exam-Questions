@@ -5,7 +5,6 @@
  * Write a test application named EmployeeTest that demonstrates class Employee's capabilities
  * Create two Employee object and display each object's yearly salary. Then give each
  * Employee a 10% raise and display each objects's yearly salary again */
-
 class Employee{
     String first_name;
     String last_name;
@@ -14,7 +13,11 @@ class Employee{
     public Employee(String first_name,String last_name,double monthlySalary){
         this.first_name = first_name;
         this. last_name = last_name;
-        this.monthlySalary = monthlySalary;
+        if ( monthlySalary > 0.0){
+            this.monthlySalary = monthlySalary;
+        } else {
+            this.monthlySalary = 0.0;
+        }
     }
 
     public double yearlySalary(){
@@ -22,7 +25,28 @@ class Employee{
     }
 
     public double giveRaise(int percentage){
-        return monthlySalary += monthlySalary * (percentage/100);
+        return monthlySalary += monthlySalary * (percentage/100.0);
     }
 }
-//Portion Remaining
+ 
+public class exam3B2{
+    public static void main(String[] args) {
+        Employee emp1 = new Employee("Dylan", "Chikaka", 52000);
+        Employee emp2 = new Employee("Dhruv", "Jain", 34000);
+        Employee emp3 = new Employee("Anshul", "null", -399);
+
+        System.out.println("Employee 1 salary: "+emp1.yearlySalary());
+        System.out.println("Employee 2 salary: "+emp2.yearlySalary());
+        System.out.println("Employee 3 salary: "+emp3.yearlySalary());
+
+        emp1.giveRaise(10);
+        emp2.giveRaise(10);
+        emp3.giveRaise(10);
+
+        System.out.println("After one year");
+        System.out.println("Employee 1 salary: "+emp1.yearlySalary());
+        System.out.println("Employee 2 salary: "+emp2.yearlySalary());
+        System.out.println("Employee 3 salary: "+emp3.yearlySalary());
+
+    }
+}
