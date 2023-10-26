@@ -5,3 +5,24 @@
  * Write a test application named EmployeeTest that demonstrates class Employee's capabilities
  * Create two Employee object and display each object's yearly salary. Then give each
  * Employee a 10% raise and display each objects's yearly salary again */
+
+class Employee{
+    String first_name;
+    String last_name;
+    double monthlySalary;
+
+    public Employee(String first_name,String last_name,double monthlySalary){
+        this.first_name = first_name;
+        this. last_name = last_name;
+        this.monthlySalary = monthlySalary;
+    }
+
+    public double yearlySalary(){
+        return monthlySalary * 12;
+    }
+
+    public double giveRaise(int percentage){
+        return monthlySalary += monthlySalary * (percentage/100);
+    }
+}
+//Portion Remaining
